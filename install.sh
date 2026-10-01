@@ -14,7 +14,12 @@ if [ -d "$DEST_DIR/Win7Bulid-cursors" ]; then
   rm -r "$DEST_DIR/Win7Bulid-cursors"
 fi
 
-cp -pr dist $DEST_DIR/Win7Bulid-cursors
+if [ -d "$DEST_DIR/Win7Bulid-cursors-dark" ]; then
+  rm -r "$DEST_DIR/Win7Bulid-cursors-dark"
+fi
 
+cp -pr dist "$DEST_DIR/Win7Bulid-cursors"
+cp -pr dist-dark "$DEST_DIR/Win7Bulid-cursors-dark"
+
+echo "Installed Win7Bulid-cursors and Win7Bulid-cursors-dark to $DEST_DIR"
 echo "Finished..."
-
